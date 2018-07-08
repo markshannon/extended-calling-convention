@@ -40,6 +40,9 @@ It shouldn't use any esoteric ideas or language features. Any non obvious parts 
 
 ## Notes
 
+Stefan Behnel pointed out that  "We're essentially designing a Fast Duck Calling convention here".
+Antoine Pitrou suggested we call it the "Quick Quack protocol" :)
+
 
 ### 1.  The new API should be fully backwards compatible and should not break the ABI.
 
@@ -48,13 +51,15 @@ Nick Coghlan pointed out that no one uses the formal ABI and the informal ABI th
 
 ### 4. The implementation should not be excessivley complex.
 
-Mark Shannon suggested a fixed limit to the size of the patch. Nick Coghlan and others felt that this was too restrictive.
+Mark Shannon suggested a fixed limit to the size of the patch. Nick Coghlan and Brett Cannon felt that this was too restrictive.
 
 
 ### 5. It should not slow down CPython
 
 Mark Shannon believes it is possible and desirable to speed up CPython with this change. INADA Naoki believes it impossible to speed up CPython with a new calling convention.
-Although, we choose "not slower" rather than "faster" as a requirement, no one will object to it being faster.
+Jeroen Demeyer requested we use the term "not slower".
+Antoine Pitrou noted that the primary goal was to bring 3rd party code up to speed, not to speed up CPython.
+Although, we choose "not slower" rather than "faster" as a requirement, no one will object to it being faster :)
 
 
 
