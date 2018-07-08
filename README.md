@@ -3,9 +3,9 @@
 ## Summary
 
 3rd party tools, like Cython, and hand written C extensions are forced to
-choose between performance and flexibility.
+choose either performance or flexibility. They cannot have both.
 Either callables are builtin methods with a narrow range of argument types and no ability to
-use reflection, or they implement the `tp_call` function pointer and suffer imaired performance.
+use reflection, or they implement the `tp_call` function pointer and suffer impaired performance.
 
 We aim to add a new calling convention to CPython, so that 3rd party tools can generate performant *and* flexible code.
 
@@ -14,7 +14,7 @@ We aim to add a new calling convention to CPython, so that 3rd party tools can g
 
 ### 1. The new API should be fully backwards compatible and should not break the ABI.
 
-The exact meaning of "ABI" is debatable. We should avoid any gratuitous breakage and minimise other breakages.
+The exact meaning of "ABI" is a bit vague. No one adheres strictly to [PEP 384](https://www.python.org/dev/peps/pep-0384/). We should avoid any gratuitous breakage and minimise other breakages.
 
 ### 2. The new API should be exposed to 3rd party code *and* used internally. 
 
